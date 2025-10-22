@@ -1,4 +1,0 @@
-repository "CarChaseDemo/CarChaseDemo@2475886322964@cloud"
-  path "/"
-    br "/main"
-    co "/main"
