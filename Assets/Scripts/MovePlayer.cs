@@ -8,8 +8,6 @@ public class MovePlayer : MonoBehaviour
     public KeyCode driftKey = KeyCode.Space;
     public float maxSpeed = 12f;
     public float acceleration = 30f;
-    public float driftFactorSticky = 0.15f; // High grip (no drift)
-    public float driftFactorSlippy = 0.98f; // Low grip (drifting)
     public bool useDirectionalSprites = false;
     public Sprite spriteUp;
     public Sprite spriteDown;
@@ -56,21 +54,33 @@ public class MovePlayer : MonoBehaviour
 
         isDrifting = Input.GetKey(driftKey);
 
+        // Determine display direction (for sprite/rotation) with simple drift visual:
+        // If drifting while moving Up + (Left or Right), face strictly Left/Right visually
+        bool upPressed = Input.GetKey(upKey);
+        bool downPressed = Input.GetKey(downKey);
+        bool leftPressed = Input.GetKey(leftKey);
+        bool rightPressed = Input.GetKey(rightKey);
+        Vector2 displayDir = input;
+        if (isDrifting && (upPressed || downPressed) && (leftPressed ^ rightPressed))
+        {
+            displayDir = rightPressed ? Vector2.right : Vector2.left;
+        }
+
         if (useDirectionalSprites && spriteRenderer != null)
         {
-            ApplyDirectionalSprite(input);
-            if (input.sqrMagnitude > 0.0001f)
+            ApplyDirectionalSprite(displayDir);
+            if (displayDir.sqrMagnitude > 0.0001f)
             {
-                lastFacingDir = input;
+                lastFacingDir = displayDir;
             }
         }
         else
         {
-            if (input.sqrMagnitude > 0.0001f)
+            if (displayDir.sqrMagnitude > 0.0001f)
             {
-                float angle = Mathf.Atan2(input.y, input.x) * Mathf.Rad2Deg - 90f;
+                float angle = Mathf.Atan2(displayDir.y, displayDir.x) * Mathf.Rad2Deg - 90f;
                 rb2d.MoveRotation(angle);
-                lastFacingDir = input;
+                lastFacingDir = displayDir;
             }
         }
     }
@@ -80,29 +90,6 @@ public class MovePlayer : MonoBehaviour
         Vector2 desiredVelocity = input * maxSpeed;
         float maxDelta = acceleration * Time.fixedDeltaTime;
         rb2d.linearVelocity = Vector2.MoveTowards(rb2d.linearVelocity, desiredVelocity, maxDelta);
-        Vector2 forwardDir;
-        if (useDirectionalSprites)
-        {
-            if (rb2d.linearVelocity.sqrMagnitude > 0.0001f)
-            {
-                forwardDir = rb2d.linearVelocity.normalized;
-            }
-            else
-            {
-                forwardDir = (lastFacingDir.sqrMagnitude > 0.0001f) ? lastFacingDir : Vector2.up;
-            }
-        }
-        else
-        {
-            forwardDir = transform.up;
-        }
-
-        Vector2 rightDir = new Vector2(forwardDir.y, -forwardDir.x);
-        Vector2 forwardVelocity = forwardDir * Vector2.Dot(rb2d.linearVelocity, forwardDir);
-        Vector2 lateralVelocity = rightDir * Vector2.Dot(rb2d.linearVelocity, rightDir);
-
-        float driftFactor = isDrifting ? driftFactorSlippy : driftFactorSticky;
-        rb2d.linearVelocity = forwardVelocity + lateralVelocity * driftFactor;
 
         float speed = rb2d.linearVelocity.magnitude;
         if (speed > maxSpeed)
