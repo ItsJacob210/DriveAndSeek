@@ -20,10 +20,22 @@ public class MovePlayer : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private Vector2 lastFacingDir = Vector2.up;
+    public Vector2 CurrentFacingDir => lastFacingDir;
 
     private Vector2 input;
     private bool isDrifting;
     private bool isHit;
+
+    [Header("Boost")]
+    public KeyCode boostKey = KeyCode.LeftShift;
+    public float boostMax = 100f;
+    public float boostRegenPerSecond = 12f;
+    public float boostConsumePerSecond = 40f;
+    public float boostSpeedMultiplier = 1.4f;
+    public float boostAccelerationMultiplier = 1.4f;
+    private float boostCurrent;
+    public float BoostFraction => boostMax > 0f ? Mathf.Clamp01(boostCurrent / boostMax) : 0f;
+    public bool IsBoosting { get; private set; }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,6 +43,7 @@ public class MovePlayer : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.MoveRotation(0f);
         spriteRenderer = GetComponent<SpriteRenderer>();
+        boostCurrent = boostMax;
     }
 
     // Update is called once per frame
@@ -53,6 +66,20 @@ public class MovePlayer : MonoBehaviour
         }
 
         isDrifting = Input.GetKey(driftKey);
+
+        // Boost logic (resource, regen/consume)
+        bool wantsBoost = Input.GetKey(boostKey);
+        IsBoosting = wantsBoost && boostCurrent > 0.001f;
+        if (IsBoosting)
+        {
+            boostCurrent -= boostConsumePerSecond * Time.deltaTime;
+            if (boostCurrent < 0f) boostCurrent = 0f;
+        }
+        else
+        {
+            boostCurrent += boostRegenPerSecond * Time.deltaTime;
+            if (boostCurrent > boostMax) boostCurrent = boostMax;
+        }
 
         // Determine display direction (for sprite/rotation) with simple drift visual:
         // If drifting while moving Up + (Left or Right), face strictly Left/Right visually
@@ -87,14 +114,17 @@ public class MovePlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 desiredVelocity = input * maxSpeed;
+        float speedMul = IsBoosting ? boostSpeedMultiplier : 1f;
+        float accelMul = IsBoosting ? boostAccelerationMultiplier : 1f;
+        Vector2 desiredVelocity = input * (maxSpeed * speedMul);
         float maxDelta = acceleration * Time.fixedDeltaTime;
-        rb2d.linearVelocity = Vector2.MoveTowards(rb2d.linearVelocity, desiredVelocity, maxDelta);
+        rb2d.linearVelocity = Vector2.MoveTowards(rb2d.linearVelocity, desiredVelocity, maxDelta * accelMul);
 
         float speed = rb2d.linearVelocity.magnitude;
-        if (speed > maxSpeed)
+        float cap = maxSpeed * speedMul;
+        if (speed > cap)
         {
-            rb2d.linearVelocity = rb2d.linearVelocity.normalized * maxSpeed;
+            rb2d.linearVelocity = rb2d.linearVelocity.normalized * cap;
         }
     }
 
@@ -146,6 +176,12 @@ public class MovePlayer : MonoBehaviour
         {
             if (spriteDown != null) spriteRenderer.sprite = spriteDown;
         }
+    }
+
+    public void AddBoost(float amount)
+    {
+        if (amount <= 0f) return;
+        boostCurrent = Mathf.Clamp(boostCurrent + amount, 0f, boostMax);
     }
 }
 
