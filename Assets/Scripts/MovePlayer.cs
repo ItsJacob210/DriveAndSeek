@@ -25,6 +25,8 @@ public class MovePlayer : MonoBehaviour
     private Vector2 input;
     private bool isDrifting;
     private bool isHit;
+    // Track key press order for drift orientation resolution
+    private float lastDownLeft, lastDownRight, lastDownUp, lastDownDown;
 
     [Header("Boost")]
     public KeyCode boostKey = KeyCode.LeftShift;
@@ -60,6 +62,12 @@ public class MovePlayer : MonoBehaviour
             input = Vector2.zero;
         }
 
+        // Record press timestamps to know which axis came first
+        if (Input.GetKeyDown(leftKey))  lastDownLeft  = Time.time;
+        if (Input.GetKeyDown(rightKey)) lastDownRight = Time.time;
+        if (Input.GetKeyDown(upKey))    lastDownUp    = Time.time;
+        if (Input.GetKeyDown(downKey))  lastDownDown  = Time.time;
+
         if (input.sqrMagnitude > 1f)
         {
             input.Normalize();
@@ -82,15 +90,31 @@ public class MovePlayer : MonoBehaviour
         }
 
         // Determine display direction (for sprite/rotation) with simple drift visual:
-        // If drifting while moving Up + (Left or Right), face strictly Left/Right visually
+        // Horizontal-first drift (A/D pressed, then W/S + drift): face strictly Up/Down
+        // Vertical-first drift (W/S pressed, then A/D + drift): face strictly Left/Right
         bool upPressed = Input.GetKey(upKey);
         bool downPressed = Input.GetKey(downKey);
         bool leftPressed = Input.GetKey(leftKey);
         bool rightPressed = Input.GetKey(rightKey);
         Vector2 displayDir = input;
-        if (isDrifting && (upPressed || downPressed) && (leftPressed ^ rightPressed))
+        bool haveSide = (leftPressed ^ rightPressed);
+        bool haveVert = (upPressed ^ downPressed);
+        if (isDrifting && haveSide && haveVert)
         {
-            displayDir = rightPressed ? Vector2.right : Vector2.left;
+            float lastHorizDown = Mathf.Max(lastDownLeft, lastDownRight);
+            float lastVertDown  = Mathf.Max(lastDownUp, lastDownDown);
+            bool horizontalFirst = lastHorizDown < lastVertDown;
+
+            if (horizontalFirst)
+            {
+                // Face vertical while moving diagonally
+                displayDir = upPressed ? Vector2.up : Vector2.down;
+            }
+            else
+            {
+                // Face horizontal while moving diagonally
+                displayDir = rightPressed ? Vector2.right : Vector2.left;
+            }
         }
 
         if (useDirectionalSprites && spriteRenderer != null)
