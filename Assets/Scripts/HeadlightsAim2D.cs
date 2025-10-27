@@ -1,29 +1,30 @@
 using UnityEngine;
+//orients and positions headlight transforms to match moveplayer facing, with per-orientation offsets
 
 public class HeadlightsAim2D : MonoBehaviour
 {
 	[SerializeField] private MovePlayer movePlayer;
-	[SerializeField] private Transform[] headlightRoots; // assign the two headlight cone objects
+	[SerializeField] private Transform[] headlightRoots; //assign the two headlight cone objects
 	[SerializeField] private float rotationLerp = 18f;
-	[SerializeField] private float extraBiasDeg = 0f; // optional tiny offset
-	[SerializeField] private float fallbackAngleDeg = -90f; // default forward if no input (up = -90)
+	[SerializeField] private float extraBiasDeg = 0f; //optional tiny offset
+	[SerializeField] private float fallbackAngleDeg = -90f; //default forward if no input (up = -90)
 
 	[Header("Positioning")]
-	[SerializeField] private Transform carRoot; // optional; defaults to movePlayer.transform
+	[SerializeField] private Transform carRoot; //optional; defaults to moveplayer.transform
 	[SerializeField] private bool updatePosition = true;
-	[SerializeField] private float forwardOffset = 0.5f; // base offset if per-orientation is off
-	[SerializeField] private float lateralSeparation = 0.3f; // half-distance between left/right lights
-	[SerializeField] private float zOffset = 0f; // keep lights on same Z plane if needed
+	[SerializeField] private float forwardOffset = 0.5f; //base offset if per-orientation is off
+	[SerializeField] private float lateralSeparation = 0.3f; //half-distance between left/right lights
+	[SerializeField] private float zOffset = 0f; //keep lights on same z plane if needed
 
 	[Header("Per-Orientation Offsets (optional, overrides base forwardOffset)")]
 	[SerializeField] private bool usePerOrientationOffsets = true;
 	[SerializeField] private float offsetUp = 1.3f;
 	[SerializeField] private float offsetDown = 0.95f;
-	[SerializeField] private float offsetSide = 1.6f; // A or D only
-	[SerializeField] private float offsetUpDiagonal = 1.55f; // W+A or W+D
-	[SerializeField] private float offsetDownDiagonal = 1.1f; // A+S or S+D
-	[SerializeField] private float extraForwardDriftUp = 0f; // fine-tune drift up
-	[SerializeField] private float extraForwardDriftDown = 0f; // fine-tune drift down
+	[SerializeField] private float offsetSide = 1.6f; //a or d only
+	[SerializeField] private float offsetUpDiagonal = 1.55f; //w+a or w+d
+	[SerializeField] private float offsetDownDiagonal = 1.1f; //a+s or s+d
+	[SerializeField] private float extraForwardDriftUp = 0f; //fine-tune drift up
+	[SerializeField] private float extraForwardDriftDown = 0f; //fine-tune drift down
 
 	private float currentAngle;
 	private float lastEffectiveForwardOffset;
@@ -57,7 +58,7 @@ public class HeadlightsAim2D : MonoBehaviour
 		for (int i = 0; i < headlightRoots.Length; i++)
 		{
 			if (headlightRoots[i] == null) continue;
-			headlightRoots[i].rotation = rot; // world-space rotation to follow facing even if parent doesn't rotate
+				headlightRoots[i].rotation = rot; //world-space rotation to follow facing even if parent doesn't rotate
 		}
 
 		if (updatePosition)
@@ -81,7 +82,7 @@ public class HeadlightsAim2D : MonoBehaviour
 				{
 					Vector3 leftPos = baseFront + (Vector3)(-right * lateralSeparation);
 					Vector3 rightPos = baseFront + (Vector3)(right * lateralSeparation);
-					// Convention: index 0 = left, index 1 = right
+					//convention: index 0 = left, index 1 = right
 					if (headlightRoots[0] != null) headlightRoots[0].position = new Vector3(leftPos.x, leftPos.y, z);
 					if (headlightRoots[1] != null) headlightRoots[1].position = new Vector3(rightPos.x, rightPos.y, z);
 				}

@@ -1,5 +1,6 @@
 using UnityEngine;
-using UnityEngine.Rendering.Universal; // Light2D
+using UnityEngine.Rendering.Universal; //light2D
+//toggles an array of 2d headlights on/off with smoothing
 
 public class HeadlightsToggle2D : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class HeadlightsToggle2D : MonoBehaviour
 	[Header("Intensity (scale existing per-light intensities)")]
 	public float onScale = 1f;
 	public float offScale = 0f;
-
 	private bool isOn;
 	private float[] baseIntensities;
 
@@ -22,7 +22,7 @@ public class HeadlightsToggle2D : MonoBehaviour
 	{
 		isOn = lightsOnAtStart;
 		CacheBaseIntensities();
-		// Snap to initial state
+		//snap to initial state
 		ApplyScaleImmediate(isOn ? onScale : offScale);
 	}
 

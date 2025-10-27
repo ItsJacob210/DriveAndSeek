@@ -1,4 +1,5 @@
 using UnityEngine;
+//handles player input, direction display rules, movement physics and boost resource
 
 public class MovePlayer : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class MovePlayer : MonoBehaviour
     private Vector2 input;
     private bool isDrifting;
     private bool isHit;
-    // Track key press order for drift orientation resolution
+    //track key press order for drift orientation resolution
     private float lastDownLeft, lastDownRight, lastDownUp, lastDownDown;
 
     [Header("Boost")]
@@ -39,7 +40,7 @@ public class MovePlayer : MonoBehaviour
     public float BoostFraction => boostMax > 0f ? Mathf.Clamp01(boostCurrent / boostMax) : 0f;
     public bool IsBoosting { get; private set; }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //start is called once before the first execution of update after the monobehaviour is created
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -48,7 +49,7 @@ public class MovePlayer : MonoBehaviour
         boostCurrent = boostMax;
     }
 
-    // Update is called once per frame
+    //update is called once per frame
     void Update()
     {
         if (!isHit)
@@ -62,7 +63,7 @@ public class MovePlayer : MonoBehaviour
             input = Vector2.zero;
         }
 
-        // Record press timestamps to know which axis came first
+        //record press timestamps to know which axis came first
         if (Input.GetKeyDown(leftKey))  lastDownLeft  = Time.time;
         if (Input.GetKeyDown(rightKey)) lastDownRight = Time.time;
         if (Input.GetKeyDown(upKey))    lastDownUp    = Time.time;
@@ -75,7 +76,7 @@ public class MovePlayer : MonoBehaviour
 
         isDrifting = Input.GetKey(driftKey);
 
-        // Boost logic (resource, regen/consume)
+        //boost logic (resource, regen/consume)
         bool wantsBoost = Input.GetKey(boostKey);
         IsBoosting = wantsBoost && boostCurrent > 0.001f;
         if (IsBoosting)
@@ -89,9 +90,9 @@ public class MovePlayer : MonoBehaviour
             if (boostCurrent > boostMax) boostCurrent = boostMax;
         }
 
-        // Determine display direction (for sprite/rotation) with simple drift visual:
-        // Horizontal-first drift (A/D pressed, then W/S + drift): face strictly Up/Down
-        // Vertical-first drift (W/S pressed, then A/D + drift): face strictly Left/Right
+        //determine display direction (for sprite/rotation) with simple drift visual:
+        //horizontal-first drift (a/d pressed, then w/s + drift) faces strictly up/down
+        //vertical-first drift (w/s pressed, then a/d + drift) faces strictly left/right
         bool upPressed = Input.GetKey(upKey);
         bool downPressed = Input.GetKey(downKey);
         bool leftPressed = Input.GetKey(leftKey);

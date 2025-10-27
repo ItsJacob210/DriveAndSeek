@@ -1,13 +1,14 @@
 using UnityEngine;
+//emits trail renderers at rear tires during drift combos above a speed threshold
 
 public class DriftSkidmarks2D : MonoBehaviour
 {
 	[SerializeField] private MovePlayer movePlayer;
-	[SerializeField] private TrailRenderer leftTrail;   // rear-left trail
-	[SerializeField] private TrailRenderer rightTrail;  // rear-right trail
+	[SerializeField] private TrailRenderer leftTrail;   //rear-left trail
+	[SerializeField] private TrailRenderer rightTrail;  //rear-right trail
 
 	[SerializeField] private float minSpeedForMarks = 2f;
-	[SerializeField] private float minEmitSeconds = 0.05f; // prevent flicker when tapping
+	[SerializeField] private float minEmitSeconds = 0.05f; //prevent flicker when tapping
 
 	private float lastEmitOnTime;
 

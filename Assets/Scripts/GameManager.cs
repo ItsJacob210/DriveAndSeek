@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+//manages countdown timer and displays win state for splitscreen ui
 
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timerTextRight;
     public TextMeshProUGUI resultTextRight;
     private bool gameEnded;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //start is called once before the first execution of update after the monobehaviour is created
     void Start()
     {
         if (timerText != null) timerText.text = timerCount.ToString();
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("CountDownTimer", 1, 1);
     }
 
-    // Update is called once per frame
+    //update is called once per frame
     void Update()
     {
 

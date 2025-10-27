@@ -1,12 +1,10 @@
 using UnityEngine;
+//detects physical collision between cop and robber rigidbodies to trigger a win
 
 public class CopCatchOnContact : MonoBehaviour
 {
-	[Tooltip("The robber/player car GameObject. Catch triggers when our non-trigger collider touches theirs.")]
 	public GameObject targetCar;
-	[Tooltip("Require this relative speed to count as a catch. Set 0 for any touch.")]
 	public float minRelativeSpeed = 0f;
-
 	private Rigidbody2D selfRb;
 	private Rigidbody2D targetRb;
 
@@ -22,6 +20,7 @@ public class CopCatchOnContact : MonoBehaviour
 		targetRb = target != null ? target.GetComponent<Rigidbody2D>() : null;
 	}
 
+    //check both enter and stay so a catch also triggers when colliders remain in contact
     private void OnCollisionEnter2D(Collision2D collision) { TryCatch(collision); }
     private void OnCollisionStay2D(Collision2D collision) { TryCatch(collision); }
 
@@ -29,6 +28,7 @@ public class CopCatchOnContact : MonoBehaviour
     {
         if (targetRb == null) return;
         if (collision == null) return;
+        //only accept collisions with the robber's specific rigidbody
         if (collision.rigidbody != targetRb) return;
 
         if (minRelativeSpeed > 0f)
@@ -40,6 +40,7 @@ public class CopCatchOnContact : MonoBehaviour
             }
         }
 
+        //signal win via game manager
         var gm = FindFirstObjectByType<GameManager>();
         if (gm != null) gm.CopWins();
     }
