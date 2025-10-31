@@ -52,6 +52,12 @@ public class MovePlayer : MonoBehaviour
     //update is called once per frame
     void Update()
     {
+        //block input and facing changes when game is paused (pre-start or after win)
+        if (Time.timeScale == 0f)
+        {
+            return;
+        }
+
         if (!isHit)
         {
             float x = (Input.GetKey(rightKey) ? 1f : 0f) - (Input.GetKey(leftKey) ? 1f : 0f);
