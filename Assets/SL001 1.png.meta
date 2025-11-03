@@ -1,0 +1,988 @@
+fileFormatVersion: 2
+guid: 7a72200910ca2ff4fa9edd6927f188ce
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3848056631832209349
+    second: SL001 1_0
+  - first:
+      213: 8905377522034610684
+    second: SL001 1_1
+  - first:
+      213: -3476055111002302725
+    second: SL001 1_2
+  - first:
+      213: 276903259207973188
+    second: SL001 1_3
+  - first:
+      213: -6020533256509790658
+    second: SL001 1_4
+  - first:
+      213: -7767986104402595779
+    second: SL001 1_5
+  - first:
+      213: -2808637473232612184
+    second: SL001 1_6
+  - first:
+      213: 6673901562313571199
+    second: SL001 1_7
+  - first:
+      213: 2391642726062323779
+    second: SL001 1_8
+  - first:
+      213: -7699412704166131045
+    second: SL001 1_9
+  - first:
+      213: -121646434696205253
+    second: SL001 1_10
+  - first:
+      213: -3318404710517259437
+    second: SL001 1_11
+  - first:
+      213: -2561083819046778496
+    second: SL001 1_12
+  - first:
+      213: -5696861999570063884
+    second: SL001 1_13
+  - first:
+      213: -1678660633117104073
+    second: SL001 1_14
+  - first:
+      213: 8842013379919163360
+    second: SL001 1_15
+  - first:
+      213: -7249609272029723685
+    second: SL001 1_16
+  - first:
+      213: 391633014928334619
+    second: SL001 1_17
+  - first:
+      213: 5590198979068166623
+    second: SL001 1_18
+  - first:
+      213: 141637981075284085
+    second: SL001 1_19
+  - first:
+      213: 1994995127739970551
+    second: SL001 1_20
+  - first:
+      213: 3078800011565640645
+    second: SL001 1_21
+  - first:
+      213: 3891582605263458223
+    second: SL001 1_22
+  - first:
+      213: -4236810600215914627
+    second: SL001 1_23
+  - first:
+      213: 8292630204096845873
+    second: SL001 1_24
+  - first:
+      213: -8406974803555608570
+    second: SL001 1_25
+  - first:
+      213: 3139707580272979102
+    second: SL001 1_26
+  - first:
+      213: -2421457032706798803
+    second: SL001 1_27
+  - first:
+      213: 4837503758183159460
+    second: SL001 1_28
+  - first:
+      213: 791131066320515025
+    second: SL001 1_29
+  - first:
+      213: 4617400364988342201
+    second: SL001 1_30
+  - first:
+      213: 2605089282923788711
+    second: SL001 1_31
+  - first:
+      213: -5867997123128144468
+    second: SL001 1_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SL001 1_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 623
+        width: 10
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c7e1f76e1b076530800000000000000
+      internalID: 3848056631832209349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 623
+        width: 10
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf11f9f6ca1469b70800000000000000
+      internalID: 8905377522034610684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_2
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 623
+        width: 10
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf6d6012b4292cfc0800000000000000
+      internalID: -3476055111002302725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 623
+        width: 10
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4493d321c02c7d300800000000000000
+      internalID: 276903259207973188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_4
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 575
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e36ee4fb6e4c27ca0800000000000000
+      internalID: -6020533256509790658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 575
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d30b9ea6bc1923490800000000000000
+      internalID: -7767986104402595779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_6
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 575
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a49e115917b509d0800000000000000
+      internalID: -2808637473232612184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_7
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 575
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7bff9f6c167e9c50800000000000000
+      internalID: 6673901562313571199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_8
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 511
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 348779c4362d03120800000000000000
+      internalID: 2391642726062323779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_9
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 511
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9a4c0550f0362590800000000000000
+      internalID: -7699412704166131045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_10
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 511
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3c6dbf4633df4ef0800000000000000
+      internalID: -121646434696205253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_11
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 511
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 353c2a85f78a2f1d0800000000000000
+      internalID: -3318404710517259437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_12
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 447
+        width: 10
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08947b5f5d3357cd0800000000000000
+      internalID: -2561083819046778496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_13
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 447
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd6435d13ea0f0b0800000000000000
+      internalID: -5696861999570063884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_14
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 399
+        width: 9
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7386f905c0334b8e0800000000000000
+      internalID: -1678660633117104073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_15
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 399
+        width: 9
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ef2551725425ba70800000000000000
+      internalID: 8842013379919163360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_16
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 399
+        width: 9
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd34a44f6c6346b90800000000000000
+      internalID: -7249609272029723685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_17
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 399
+        width: 9
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1f5e11f62c5f6500800000000000000
+      internalID: 391633014928334619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_18
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 351
+        width: 9
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd10c137a50649d40800000000000000
+      internalID: 5590198979068166623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_19
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 351
+        width: 9
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57022bc4ef237f100800000000000000
+      internalID: 141637981075284085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_20
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 351
+        width: 9
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f3739daf75afab10800000000000000
+      internalID: 1994995127739970551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_21
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 351
+        width: 9
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cba6df5c481aba20800000000000000
+      internalID: 3078800011565640645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_22
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 287
+        width: 11
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faf41d0d2cda10630800000000000000
+      internalID: 3891582605263458223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_23
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 287
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d775589e433d335c0800000000000000
+      internalID: -4236810600215914627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_24
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 239
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1381ed00c37551370800000000000000
+      internalID: 8292630204096845873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_25
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 239
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 608986e45fc645b80800000000000000
+      internalID: -8406974803555608570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_26
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 239
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9ca5ccc86b729b20800000000000000
+      internalID: 3139707580272979102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_27
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 191
+        width: 11
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2bc3ae78a1456ed0800000000000000
+      internalID: -2421457032706798803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_28
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 191
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a6df12b904422340800000000000000
+      internalID: 4837503758183159460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_29
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 191
+        width: 11
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1df6fc26389aafa00800000000000000
+      internalID: 791131066320515025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_30
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 143
+        width: 11
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf93ecfa2d441040800000000000000
+      internalID: 4617400364988342201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_31
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 143
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a979d486e2272420800000000000000
+      internalID: 2605089282923788711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SL001 1_32
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 143
+        width: 11
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cadceecd4bfa09ea0800000000000000
+      internalID: -5867997123128144468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SL001 1_0: 3848056631832209349
+      SL001 1_1: 8905377522034610684
+      SL001 1_10: -121646434696205253
+      SL001 1_11: -3318404710517259437
+      SL001 1_12: -2561083819046778496
+      SL001 1_13: -5696861999570063884
+      SL001 1_14: -1678660633117104073
+      SL001 1_15: 8842013379919163360
+      SL001 1_16: -7249609272029723685
+      SL001 1_17: 391633014928334619
+      SL001 1_18: 5590198979068166623
+      SL001 1_19: 141637981075284085
+      SL001 1_2: -3476055111002302725
+      SL001 1_20: 1994995127739970551
+      SL001 1_21: 3078800011565640645
+      SL001 1_22: 3891582605263458223
+      SL001 1_23: -4236810600215914627
+      SL001 1_24: 8292630204096845873
+      SL001 1_25: -8406974803555608570
+      SL001 1_26: 3139707580272979102
+      SL001 1_27: -2421457032706798803
+      SL001 1_28: 4837503758183159460
+      SL001 1_29: 791131066320515025
+      SL001 1_3: 276903259207973188
+      SL001 1_30: 4617400364988342201
+      SL001 1_31: 2605089282923788711
+      SL001 1_32: -5867997123128144468
+      SL001 1_4: -6020533256509790658
+      SL001 1_5: -7767986104402595779
+      SL001 1_6: -2808637473232612184
+      SL001 1_7: 6673901562313571199
+      SL001 1_8: 2391642726062323779
+      SL001 1_9: -7699412704166131045
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -42,5 +42,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Building
+    uniqueID: 749487021
+    locked: 0
+  - name: Backlight
+    uniqueID: 424213423
+    locked: 0
   m_RenderingLayers:
   - Default
