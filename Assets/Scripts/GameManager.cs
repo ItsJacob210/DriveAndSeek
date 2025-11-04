@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 //manages countdown timer and displays win state for splitscreen ui
 
 public class GameManager : MonoBehaviour
@@ -9,6 +10,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI resultText;
     public TextMeshProUGUI timerTextRight;
     public TextMeshProUGUI resultTextRight;
+    //center overlay elements shown at end of game
+    public GameObject endOverlayRoot; //assign a panel or canvas group root; kept inactive by default
+    public TextMeshProUGUI centerResultText; //big center line: "Cop Wins!" or "Robber Wins!"
     private bool gameEnded;
     //start is called once before the first execution of update after the monobehaviour is created
     void Start()
@@ -31,7 +35,7 @@ public class GameManager : MonoBehaviour
         timerCount--;
         if (timerCount == 0)
         {
-            print("Time Out");
+            RobberWins();
             CancelInvoke();
         }
         if (timerText != null) timerText.text = timerCount.ToString();
@@ -43,7 +47,28 @@ public class GameManager : MonoBehaviour
         if (gameEnded) return;
         gameEnded = true;
         Time.timeScale = 0f;
-        if (resultText != null) { resultText.text = "Cop Wins!"; resultText.gameObject.SetActive(true); }
-        if (resultTextRight != null) { resultTextRight.text = "Cop Wins!"; resultTextRight.gameObject.SetActive(true); }
+        if (resultText != null) { resultText.text = "you win"; resultText.gameObject.SetActive(true); }
+        if (resultTextRight != null) { resultTextRight.text = "you lose"; resultTextRight.gameObject.SetActive(true); }
+        if (centerResultText != null) centerResultText.text = "Cop Wins!";
+        if (endOverlayRoot != null) endOverlayRoot.SetActive(true);
+    }
+
+    public void RobberWins()
+    {
+        if (gameEnded) return;
+        gameEnded = true;
+        Time.timeScale = 0f;
+        if (resultText != null) { resultText.text = "you lose"; resultText.gameObject.SetActive(true); }
+        if (resultTextRight != null) { resultTextRight.text = "you win"; resultTextRight.gameObject.SetActive(true); }
+        if (centerResultText != null) centerResultText.text = "Robber Wins!";
+        if (endOverlayRoot != null) endOverlayRoot.SetActive(true);
+    }
+
+    public void RestartToStart()
+    {
+        //reloads current scene so the start overlay appears again
+        Time.timeScale = 1f;
+        var scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }

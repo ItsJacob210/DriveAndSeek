@@ -44,6 +44,9 @@ public class HeadlightsAim2D : MonoBehaviour
 
 	private void LateUpdate()
 	{
+        //freeze lights when game is paused (pre-start or after end)
+        if (Time.timeScale == 0f) return;
+
 		if (movePlayer == null || headlightRoots == null || headlightRoots.Length == 0) return;
 
 		Vector2 f = movePlayer.CurrentFacingDir;
