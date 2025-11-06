@@ -6,6 +6,9 @@ public class ChaseAudioManager : MonoBehaviour
 	public Transform cop;
 	public Transform robber;
 	
+	//when true, do not play loops until BeginGameplay() is called
+	public bool waitForStart = true;
+	
 	public AudioClip chaseMusicLoop; //2 min
 	public AudioClip sirenLoop; //1 sec
 	
@@ -35,24 +38,15 @@ public class ChaseAudioManager : MonoBehaviour
 
 	private void Start()
 	{
-		//kick off music loop immediately
-		if (chaseMusicLoop != null)
+		if (!waitForStart)
 		{
-			musicSource.clip = chaseMusicLoop;
-			musicSource.volume = musicVolume;
-			musicSource.Play();
-		}
-		//start siren loop muted; volume is driven by distance
-		if (sirenLoop != null)
-		{
-			sirenSource.clip = sirenLoop;
-			sirenSource.volume = 0f;
-			sirenSource.Play();
+			PlayLoops();
 		}
 	}
 
 	private void Update()
 	{
+		if (cop == null || robber == null) return;
 		float d = Vector3.Distance(cop.position, robber.position);
 		float t = 0f;
 		if (d <= sirenStartDistance)
@@ -65,6 +59,32 @@ public class ChaseAudioManager : MonoBehaviour
 		sirenSource.volume = Mathf.Lerp(sirenSource.volume, targetVol, volumeLerpSpeed * Time.deltaTime);
 		
 		musicSource.volume = musicVolume; //keep stable unless you want ducking
+	}
+
+	public void BeginGameplay()
+	{
+		if (musicSource.isPlaying || sirenSource.isPlaying) return;
+		PlayLoops();
+	}
+
+	private void PlayLoops()
+	{
+		//kick off music loop
+		if (chaseMusicLoop != null)
+		{
+			musicSource.clip = chaseMusicLoop;
+			musicSource.volume = musicVolume;
+			musicSource.loop = true;
+			musicSource.Play();
+		}
+		//start siren loop muted; volume is distance-driven
+		if (sirenLoop != null)
+		{
+			sirenSource.clip = sirenLoop;
+			sirenSource.volume = 0f;
+			sirenSource.loop = true;
+			sirenSource.Play();
+		}
 	}
 }
 
