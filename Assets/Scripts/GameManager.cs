@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject endOverlayRoot; //assign a panel or canvas group root; kept inactive by default
     public TextMeshProUGUI centerResultText; //big center line: "Cop Wins!" or "Robber Wins!"
     private bool gameEnded;
+    
     //start is called once before the first execution of update after the monobehaviour is created
     void Start()
     {
