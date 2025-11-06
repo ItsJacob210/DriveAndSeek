@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 //controls the start overlay visibility and start action
 
 public class StartOverlay : MonoBehaviour
@@ -17,6 +19,15 @@ public class StartOverlay : MonoBehaviour
 	[SerializeField] private float startMusicVolume = 0.6f;
 	private AudioSource audioSource;
 	[SerializeField] private ChaseAudioManager chaseAudioManager; //optional: start gameplay loops on finish
+	//start button to disable after first click (optional but recommended)
+	[SerializeField] private Button startButton;
+	//optional: groups to hide when countdown starts (e.g., controls panels and the start button root)
+	[SerializeField] private GameObject[] hideOnStart;
+	//countdown ui: you can reuse the title text instead of a separate panel
+	[SerializeField] private GameObject countdownRoot; //optional panel; if null we keep the existing layout
+	[SerializeField] private TextMeshProUGUI countdownText; //big center text (can be your title \"drive & seek\")
+	[SerializeField] private string driveText = "Drive";
+	private bool isStarting;
 
 	private void Awake()
 	{
@@ -34,10 +45,29 @@ public class StartOverlay : MonoBehaviour
 			audioSource.volume = startMusicVolume;
 			audioSource.Play();
 		}
+		//if no separate countdown root, reuse current layout and only drive the assigned text
+		if (countdownRoot != null) countdownRoot.SetActive(false);
+		//fallback: if no explicit countdownText is assigned, try to find a TMP on this object
+		if (countdownText == null) countdownText = GetComponentInChildren<TextMeshProUGUI>(true);
 	}
 
 	public void StartGame()
 	{
+		//prevent multiple presses
+		if (isStarting) return;
+		isStarting = true;
+		if (startButton != null) startButton.interactable = false;
+		//block further input on the menu while countdown happens
+		if (overlay != null) overlay.interactable = false;
+		//hide configured groups (title stays visible to show numbers if countdownText uses it)
+		if (hideOnStart != null)
+		{
+			for (int i = 0; i < hideOnStart.Length; i++)
+			{
+				if (hideOnStart[i] != null) hideOnStart[i].SetActive(false);
+			}
+		}
+
 		if (buttonClickClip != null) audioSource.PlayOneShot(buttonClickClip);
 		if (useCountdown && countdownSeconds > 0)
 		{
@@ -52,11 +82,17 @@ public class StartOverlay : MonoBehaviour
 	private System.Collections.IEnumerator BeginCountdownThenStart()
 	{
 		int seconds = Mathf.Max(1, countdownSeconds);
+		//show countdown overlay
+		if (countdownRoot != null) countdownRoot.SetActive(true);
 		for (int i = seconds; i > 0; i--)
 		{
 			if (countdownBeepClip != null) audioSource.PlayOneShot(countdownBeepClip);
+			if (countdownText != null) countdownText.text = i.ToString();
 			yield return new WaitForSecondsRealtime(1f);
 		}
+		//display final drive text briefly
+		if (countdownText != null) countdownText.text = driveText;
+		yield return new WaitForSecondsRealtime(0.35f);
 		FinishStart();
 	}
 
@@ -71,6 +107,8 @@ public class StartOverlay : MonoBehaviour
 		//kick off gameplay audio if assigned
 		if (chaseAudioManager != null) chaseAudioManager.BeginGameplay();
 		Show(false);
+		//hide countdown overlay
+		if (countdownRoot != null) countdownRoot.SetActive(false);
 		if (pauseAtStart) Time.timeScale = 1f;
 	}
 
