@@ -1,42 +1,27 @@
-# =============== #
-# Unity Generated #
-# =============== #
-[Ll]ibrary/
-[Tt]emp/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
-[Mm]emoryCaptures/
+# Unity generated folders
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
 
-# Asset meta data should only be ignored when the corresponding asset is also ignored
-!/[Aa]ssets/**/*.meta
-
-# User-specific files
+# Visual Studio / Rider
+.vscode/
 *.csproj
-*.unityproj
 *.sln
 *.user
-*.userprefs
 *.pidb
-*.booproj
-*.svd
-*.pdb
-*.mdb
-*.opendb
-*.VC.db
-*.VC.opendb
+*.unityproj
+*.suo
+*.tmp
+*.userprefs
 
-# Unity cache and other generated data
-/[Oo]bj/
-/[Uu]ser[Ss]ettings/
-/[Aa]ssets/AssetStoreTools*
+# Shader files you don’t want
+*.shader
+*.compute
+*.cginc
 
-# Builds
-*.apk
-*.aab
-*.xcodeproj
-*.app
-
-# OS files
+# OS generated
 .DS_Store
 Thumbs.db
