@@ -21,6 +21,11 @@ Logs/
 *.shader
 *.compute
 *.cginc
+*.hlsl
+*.glsl
+*.shadergraph
+Assets/TextMesh Pro/Shaders.meta
+Assets/TextMesh Pro/Shaders/*.meta
 
 # OS generated
 .DS_Store
